@@ -59,6 +59,8 @@ def main(type):
                 count = 0
                 images = []
 
+    if count!=0:
+        all_features = torch.cat([all_features, features], dim=0)
     all_features = pickle.dumps(all_features)
     with open(os.path.join(current_path, 'result', f'{flag}_feature.pkl'), 'wb') as f:
         f.write(all_features)
